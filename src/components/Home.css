@@ -1,0 +1,23 @@
+.homeBg { 
+    height: 75vh;
+    width: auto;
+    margin: 0;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    object-fit: contain;
+    z-index: -5;
+    position: relative;
+    background-image: url("../images/allymalsBG.png");
+}
+
+.homeBg h1 { 
+    margin: 0;
+}
+
+@media screen and (max-width: 960px) { 
+    .homeBg { 
+        height: 30vh;
+    }
+}
+
