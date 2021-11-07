@@ -1,5 +1,5 @@
 .homeBg { 
-    height: 75vh;
+    height: 65vh;
     width: auto;
     margin: 0;
     background-position: center;
@@ -8,7 +8,7 @@
     object-fit: contain;
     z-index: -5;
     position: relative;
-    background-image: url("../images/allymalsBG.png");
+    background-image: url("../images/waveform1.png");
 }
 
 .homeBg h1 { 

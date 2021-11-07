@@ -1,5 +1,5 @@
 .footer {
-    background-color: rgba(52,59,65,1);
+    background-color: #000;
     height: 80px;
     display: flex;
     justify-content: center;
@@ -14,7 +14,6 @@
   }
 
   .footer__imgLogo { 
-    border-radius: 50%;
     height: auto;
     width: 85px;
     align-items: center;
@@ -30,8 +29,8 @@
     width: 100%;
     height: 80px;
     max-width: 1500px;
-    padding-left: 100px;
-    padding-right: 100px;
+    padding-left: 150px;
+    padding-right: 150px;
   }
 
   .footer-container ul {
@@ -104,34 +103,38 @@
   @media screen and (max-width: 960px) {
     .footer { 
       height: 100%;
-
     }
 
     .footer-container { 
-        padding-left: 10px;
-        padding-right: 10px;
+        padding-left: 30px;
+        padding-right: 30px;
+      overflow: visible;
+
     }
 
     .footer-logo { 
-      font-size: 2.3rem;
+      font-size: 1.4rem;
+      overflow: visible;
+    }
+
+    .footer-logo h1 {
+      margin-top: 0;
       margin-bottom: 0;
     }
 
     .footer-links {
-      padding: .5rem;
       width: 100%;
       display: table;
+      font-size: 1.3rem;
+      padding-top: 15px;
     }
   
     .footer-icon {
       display: block;
-      top: 0;
-      right: 0;
       transform: translate(-100%, 60%);
-      font-size: 1.8rem;
+      font-size: 1.3rem;
       cursor: pointer;
       color: #fff;
-      margin-bottom: 65px;
     }
   }
   

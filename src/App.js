@@ -3,9 +3,8 @@ import './App.css';
 import Navbar from './components/Navbar';
 import Home from './components/Home';
 import Welcome from './components/Welcome'
-import Timeline from './components/Timeline'
+import Roadmap from './components/Roadmap'
 import About from './components/About'
-import Team from './components/Team'
 import Info from './components/Info'
 import Footer from './components/Footer'
 import { BrowserRouter as Router, Switch } from "react-router-dom";
@@ -20,11 +19,10 @@ class App extends Component {
           <Switch />
           <Navbar />
           <Welcome />
-          <Home />
           <About />
-          <Timeline />
+          <Home />
+          <Roadmap />
           <Info />
-          <Team />
           <Footer />
         </Router> 
       </>

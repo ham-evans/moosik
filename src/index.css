@@ -1,8 +1,14 @@
 body {
   margin: 0;
-  font-family: 'Ubuntu', sans-serif;
+  font-family: 'Archivo Black', sans-serif;
+  font-family: 'Open Sans', sans-serif;
+  letter-spacing: 3px;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+h1, h2 { 
+  font-family: 'Oswald', sans-serif;
 }
 
 code {

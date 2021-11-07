@@ -2,9 +2,8 @@ import React, { Component } from 'react';
 import { HashLink } from "react-router-hash-link";
 import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faDiscord, faTwitter } from '@fortawesome/free-brands-svg-icons'
+import { faDiscord, faTwitter, faYoutube } from '@fortawesome/free-brands-svg-icons'
 import { faTimes, faBars } from '@fortawesome/free-solid-svg-icons'
-import logo from '../images/allymalLogo.png'
 
 import "./Navbar.css";
 
@@ -21,15 +20,17 @@ export default class Navbar extends Component {
     return (
       <nav className={this.state.isOpen ? "navbar active" : "navbar"} id="#fullhome">
         <div className="nav-container">
-          <HashLink smooth to="#fullhome" className="nav-logo">
-            <img className="nav__imgLogo" src={logo} alt="GATB Logo"/>
-          </HashLink>
-
+          <div className="nav-logo">
+            <h2>
+              M00Sik
+            </h2>
+          </div>
+         
           <ul className={this.state.isOpen ? "nav-menu active" : "nav-menu"}>
             <li className="nav-item">
               <HashLink
                 smooth
-                to="#project"
+                to="#about"
                 className="nav-links"
               >
                 ABOUT
@@ -47,19 +48,26 @@ export default class Navbar extends Component {
             <li className="nav-item">
               <HashLink
                 smooth 
-                to="#team"
+                to="#mission"
                 className="nav-links"
               >
-                TEAM
+                MISSION
               </HashLink>
-            </li>
+            </li>            
+          </ul>
+          <ul className="nav-menu">
             <li className="nav-item">
-              <Link className="nav-links" to={{ pathname: "https://discord.gg/8ZhPnMwC" }} target="_blank" >
+              <Link className="nav-links" to={{ pathname: "https://discord.com/invite/XP5DDdExgg" }} target="_blank" >
                 <FontAwesomeIcon icon={faTwitter} />
               </Link>
             </li>
             <li className="nav-item">
-              <Link className="nav-links" to={{ pathname: "https://twitter.com/allymals" }} target="_blank" >
+              <Link className="nav-links" to={{ pathname: "https://www.youtube.com/channel/UCpYNk92YAnFCLaza7kco9Nw" }} target="_blank" >
+                <FontAwesomeIcon icon={faYoutube} />
+              </Link>
+            </li>
+            <li className="nav-item">
+              <Link className="nav-links" to={{ pathname: "https://twitter.com/M00Sik" }} target="_blank" >
                 <FontAwesomeIcon icon={faDiscord} />
               </Link>
             </li>

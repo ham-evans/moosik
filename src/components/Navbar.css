@@ -1,13 +1,12 @@
 .navbar {
-    background-color: rgba(52,59,65,.7);
-    height: 75px;
+    background-color: #000;
     display: flex;
     justify-content: center;
     align-items: center;
     font-size: 1.5rem;
     top: 0;
     z-index: 20;
-    position: absolute;
+    position: relative;
     width: 100vw;
     font-weight: 400;
     overflow-x: visible;
@@ -27,27 +26,36 @@
     justify-content: center;
     align-items: center;
     width: 100%;
-    height: 80px;
+    height: 22vh;
     max-width: 1500px;
+    flex-direction: column;
   }
 
   .nav-container ul {
-      margin: 0;
+    margin: 0;
+    padding-left: 0;
+  }
+
+  .nav-container li { 
+    margin-right: 5px;
+    margin-left: 5px;
   }
   
   .nav-logo {
     color: #fff;
     align-items: center;
-    margin-left: 50px;
+    text-align: center;
+    margin-left: auto;
     margin-right: auto;
-    cursor: pointer;
-    text-decoration: none;
-    font-size: 2rem;
-    flex-grow: 1;
-    max-width: 180px;
+    font-size: 1.9rem;
     z-index: 2;
-    margin-bottom: 0;
-    margin-top: 7px;
+    overflow: visible;
+
+  }
+
+  .nav-logo h2 { 
+    margin-bottom: 5px;
+    overflow: visible;
   }
 
   .nav-logo:hover{ 
@@ -80,11 +88,12 @@
   }
 
   .nav-item:hover { 
-    transform: scale(1.2);
+    transform: scale(1.1);
   }
   
   .nav-item a { 
-      color: #fff
+      color: #fff;
+      font-size: 1.2rem;
   }
   
   .nav-icon {
@@ -93,17 +102,25 @@
   
   @media screen and (max-width: 960px) {
     .navbar { 
-      padding-top: 10px;
+      padding-top: 0px;
     }
 
     .nav-container { 
-      height: auto;
+      flex-direction: row;
+      height: 15vh;
     }
     
     .nav-logo { 
-      font-size: 2.3rem;
+      font-size: 1.8rem;
       margin-left: 25px;
       margin-bottom: 15px;
+    }
+
+    .nav-logo h2 { 
+      margin-bottom: auto;
+      margin-top: auto;
+      overflow: visible;
+
     }
 
     .nav-menu {
@@ -115,13 +132,13 @@
       opacity: 1;
       transition: all 0.5s ease;
       margin-right: 0;
-      padding-bottom: 15px;
       padding-left: 9px;
+      padding-top: 100px;
     }
   
     .nav-menu.active {
       background: #000;
-      padding-top: 80px;
+      padding-top: 150px;
       top: 0px;
       left: 0px;
       right: 0px;
@@ -129,7 +146,7 @@
       padding-left: 9px;
       transition: all 0.5s ease;
       width: 98vw;
-
+      height: 85vh;
     }
 
     .nav-item { 
@@ -146,6 +163,7 @@
       padding: .5rem;
       width: 100%;
       display: table;
+      padding-top: 30px;
     }
   
     .nav-icon {

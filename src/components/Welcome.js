@@ -6,10 +6,11 @@ import { WalletLinkConnector }    from "@web3-react/walletlink-connector";
 import ContractAbi from '../artifacts/contracts/Allymals.sol/Allymals.json';
 import Modal from './Modal.js';
 import "./Welcome.css";
-import welcomeGif from '../images/welcomeGif.gif';
+import welcomeImg from '../images/welcomeImg.png';
 
 import { ethers } from 'ethers';
 import EthereumSession from '../lib/eth-session.js';
+/*
 
 const mainnetConfig = {
     'CONTRACT': '0x88f3a6c8cc165e513b3018e4f320c91662494fbc',
@@ -17,17 +18,16 @@ const mainnetConfig = {
     'RPC_URL':   process.env.INFURA_API_MAINNET_KEY,
     'ABI':       ContractAbi.abi
 }
+*/
 
-/*
 const rinkebyConfig = {
     'CONTRACT': '0x91F9EA5939Cc707357808481b1B90ddaDa81bf33',
     'CHAIN_ID':  4,
     'RPC_URL':   process.env.INFURA_API_RINKEBY_KEY,
     'ABI':       ContractAbi.abi
 }
-*/
 
-const config = mainnetConfig;
+const config = rinkebyConfig;
 
 const CONNECTORS = {};
 CONNECTORS.Walletlink = new WalletLinkConnector({
@@ -269,11 +269,14 @@ export default function Welcome () {
     return (
         <div className="welcome" id="Welcome">
             <div className="welcome__wrapper">
+                <div className="welcome__imgContainer">
+                    <img src={welcomeImg} alt="Waveform" />
+                </div>
                 <div className="welcome__container">
-                    <h1>Mint a Squiffy Badger Rabbit</h1> 
-                    {signedIn ? <button className="welcome__button" onClick={() => signOut()}>Wallet Connected<br /> Click to Sign Out</button> : <button className="welcome__button" onClick={() => signIn()}>Connect Wallet</button>}
-                    {signedIn ? <p>Number of Squiffy's Minted: {totalSupply} / 3210</p> : <p>Number of Squiffy's Minted: - / 3210</p>}
-                    {totalSupply < 500 ? <p>Input number of Squiffy's to Mint:<br/><span>(Presale 0.02 ETH)</span></p> : <p>Input number of Squiffy's to Mint:<br/><span>(0.03 ETH)</span></p>}
+                    <h1>Mint a M00Sik NFT</h1> 
+                    {signedIn ? <button className="welcome__button" onClick={() => signOut()}>Wallet Connected</button> : <button className="welcome__button" onClick={() => signIn()}>Connect Wallet</button>}
+                    {signedIn ? <p>Number of M00Sik NFT's Minted: {totalSupply} / 3760</p> : <p>Number of M00Sik NFT's Minted: - / 3760</p>}
+                    <p>Input number to Mint:<br/><span>(0.027 ETH)</span></p>
                     <div className={signedIn ? "welcome__signIn-input" : "welcome__signIn-input-false"}>
                         <input 
                             type="number" 
@@ -284,10 +287,7 @@ export default function Welcome () {
                             name="" 
                         />
                     </div>
-                    {howManyTokens > 0 ? <button className={signedIn ? "welcome__button" : "welcome__buttonInactive"} onClick={() => mint()}>Mint {howManyTokens} Squiffy's</button> : <button className={signedIn ? "welcome__button" : "welcome__buttonInactive"} onClick={() => mintOne()}>Mint {howManyTokens} Squiffys</button>}
-                </div>
-                <div className="welcome__imgContainer">
-                    <img src={welcomeGif} alt="Squiffy Gif"/>
+                    {howManyTokens > 0 ? <button className={signedIn ? "welcome__button" : "welcome__buttonInactive"} onClick={() => mint()}>Mint {howManyTokens} M00Sik NFT's</button> : <button className={signedIn ? "welcome__button" : "welcome__buttonInactive"} onClick={() => mintOne()}>Mint {howManyTokens} M00Sik NFT's</button>}
                 </div>
             </div>
             <Modal
