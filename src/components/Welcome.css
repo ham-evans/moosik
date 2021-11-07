@@ -8,6 +8,7 @@
     flex-direction: row;
     overflow: visible;
     padding-top: 25px;
+    height: 100%;
 }
 
 .welcome__button { 
@@ -53,7 +54,7 @@
     border-radius: 30px;
     display: flex;
     flex-direction: column;
-    height: 80vh;
+    height: 100%;
     margin-top: 0px;
     text-align: center;
     justify-content: center;

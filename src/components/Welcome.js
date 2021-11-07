@@ -21,7 +21,7 @@ const mainnetConfig = {
 */
 
 const rinkebyConfig = {
-    'CONTRACT': '0x91F9EA5939Cc707357808481b1B90ddaDa81bf33',
+    'CONTRACT': '0x0ae9ba1aaba296a812dd3c67e42a593046d661f9',
     'CHAIN_ID':  4,
     'RPC_URL':   process.env.INFURA_API_RINKEBY_KEY,
     'ABI':       ContractAbi.abi
@@ -157,7 +157,7 @@ export default function Welcome () {
         }
         catch( error ){
             if (error.code === 4001) {
-                setErrorMessage("Sign in to mint Squiffys!")
+                setErrorMessage("Sign in to mint M00Sik NFT's!")
                 toggleModal(true);
             } else { 
                 setErrorMessage(error)
@@ -242,7 +242,7 @@ export default function Welcome () {
     }
 
     const setMintingSuccess = (howManyTokens) => {
-        setErrorMessage("Congrats on minting " + howManyTokens + "  Squiffys!!");
+        setErrorMessage("Congrats on minting " + howManyTokens + "  M00Sik NFT's!!");
         toggleModal(true);
     }
 
@@ -252,7 +252,7 @@ export default function Welcome () {
     }
 
     const mintOne = () => { 
-        setErrorMessage("Must mint atleast one Squiffy!")
+        setErrorMessage("Must mint atleast one M00Sik NFT!")
         toggleModal(true);
     }
 
