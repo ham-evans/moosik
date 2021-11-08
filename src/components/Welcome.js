@@ -3,7 +3,7 @@ import { useWeb3React } from '@web3-react/core';
 import { WalletConnectConnector } from "@web3-react/walletconnect-connector";
 import { WalletLinkConnector }    from "@web3-react/walletlink-connector";
 
-import ContractAbi from '../artifacts/contracts/Allymals.sol/Allymals.json';
+import ContractAbi from '../artifacts/contracts/m00sik.json';
 import Modal from './Modal.js';
 import "./Welcome.css";
 import welcomeImg from '../images/welcomeImg.png';
@@ -16,15 +16,15 @@ const mainnetConfig = {
     'CONTRACT': '0x88f3a6c8cc165e513b3018e4f320c91662494fbc',
     'CHAIN_ID':  1,
     'RPC_URL':   process.env.INFURA_API_MAINNET_KEY,
-    'ABI':       ContractAbi.abi
+    'ABI':       ContractAbi
 }
 */
 
 const rinkebyConfig = {
-    'CONTRACT': '0x0ae9ba1aaba296a812dd3c67e42a593046d661f9',
+    'CONTRACT': '0x35F3Dd9991da89924fa416e24d50e667956fb19f',
     'CHAIN_ID':  4,
     'RPC_URL':   process.env.INFURA_API_RINKEBY_KEY,
-    'ABI':       ContractAbi.abi
+    'ABI':       ContractAbi
 }
 
 const config = rinkebyConfig;
@@ -52,6 +52,7 @@ export default function Welcome () {
     const [tokenPrice, setTokenPrice] = useState(0);
     const [howManyTokens, setHowManyTokens] = useState(20)
     const [totalSupply, setTotalSupply] = useState(0);
+    const [isActive, setIsActive] = useState(false);
 
     const [modalShown, toggleModal] = useState(false);
     const [errorMessage, setErrorMessage] = useState("");
@@ -175,16 +176,13 @@ export default function Welcome () {
         const signer = ethereumSession.ethersProvider.getSigner();
         const contractWithSigner = contract.connect(signer)
         const totalSupplyInit = await contract.totalSupply();
-        let tokenPrice;
-        if (totalSupplyInit.toNumber() < 500) {
-            tokenPrice = await contract.getPresalePrice();
-        } else { 
-            tokenPrice = await contract.getPrice();
-        }
+        const tokenPrice = await contract.PRICE();
+        const isActive = await contract.isActive();
 
         setContractWithSigner(contractWithSigner);
         setTokenPrice(tokenPrice);
-        setTotalSupply(totalSupplyInit.toNumber())
+        setTotalSupply(totalSupplyInit.toNumber());
+        setIsActive (isActive);
     }
 
     async function mint () { 
@@ -194,8 +192,7 @@ export default function Welcome () {
             return
         }
 
-        const secondsSinceEpoch = Math.round(Date.now() / 1000);
-        if( secondsSinceEpoch < 1634659200 ){
+        if( !isActive ){
             setErrorMessage("Sale is not active yet.  Try again later!")
             toggleModal(true);
             return;
