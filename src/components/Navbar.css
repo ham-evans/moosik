@@ -57,6 +57,7 @@
   .nav-logo h2 { 
     margin-bottom: 5px;
     overflow: visible;
+    margin-top: 25px;
   }
 
   .nav-logo:hover{ 

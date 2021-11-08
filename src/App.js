@@ -3,6 +3,7 @@ import './App.css';
 import Navbar from './components/Navbar';
 import Home from './components/Home';
 import Welcome from './components/Welcome'
+import Display from './components/Display'
 import Roadmap from './components/Roadmap'
 import About from './components/About'
 import Info from './components/Info'
@@ -19,6 +20,7 @@ class App extends Component {
           <Switch />
           <Navbar />
           <Welcome />
+          <Display />
           <About />
           <Home />
           <Roadmap />
