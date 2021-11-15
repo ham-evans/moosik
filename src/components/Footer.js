@@ -12,7 +12,7 @@ export default class Footer extends Component {
       <nav className="footer">
         <div className="footer-container">
           <HashLink smooth to="#home" className="footer-logo">
-            <h1>M00Sik</h1>
+            <h1>m00sik</h1>
           </HashLink>
 
           <ul className="footer-menu">

@@ -10,24 +10,24 @@ import welcomeImg from '../images/welcomeImg.png';
 
 import { ethers } from 'ethers';
 import EthereumSession from '../lib/eth-session.js';
-/*
 
 const mainnetConfig = {
-    'CONTRACT': '0x88f3a6c8cc165e513b3018e4f320c91662494fbc',
+    'CONTRACT': '0x5B94759A9B2aA3e0b4043c5BB8dD7Dc539E5B5f4',
     'CHAIN_ID':  1,
     'RPC_URL':   process.env.INFURA_API_MAINNET_KEY,
     'ABI':       ContractAbi
 }
-*/
 
+/*
 const rinkebyConfig = {
     'CONTRACT': '0x35F3Dd9991da89924fa416e24d50e667956fb19f',
     'CHAIN_ID':  4,
     'RPC_URL':   process.env.INFURA_API_RINKEBY_KEY,
     'ABI':       ContractAbi
 }
+*/
 
-const config = rinkebyConfig;
+const config = mainnetConfig;
 
 const CONNECTORS = {};
 CONNECTORS.Walletlink = new WalletLinkConnector({
@@ -158,7 +158,7 @@ export default function Welcome () {
         }
         catch( error ){
             if (error.code === 4001) {
-                setErrorMessage("Sign in to mint M00Sik NFT's!")
+                setErrorMessage("Sign in to mint m00sik NFT's!")
                 toggleModal(true);
             } else { 
                 setErrorMessage(error)
@@ -239,7 +239,7 @@ export default function Welcome () {
     }
 
     const setMintingSuccess = (howManyTokens) => {
-        setErrorMessage("Congrats on minting " + howManyTokens + "  M00Sik NFT's!!");
+        setErrorMessage("Congrats on minting " + howManyTokens + "  m00sik NFT's!!");
         toggleModal(true);
     }
 
@@ -249,7 +249,7 @@ export default function Welcome () {
     }
 
     const mintOne = () => { 
-        setErrorMessage("Must mint atleast one M00Sik NFT!")
+        setErrorMessage("Must mint atleast one m00sik NFT!")
         toggleModal(true);
     }
 
@@ -270,9 +270,9 @@ export default function Welcome () {
                     <img src={welcomeImg} alt="Waveform" />
                 </div>
                 <div className="welcome__container">
-                    <h1>Mint a M00Sik NFT</h1> 
+                    <h1>Mint a m00sik NFT</h1> 
                     {signedIn ? <button className="welcome__button" onClick={() => signOut()}>Wallet Connected</button> : <button className="welcome__button" onClick={() => signIn()}>Connect Wallet</button>}
-                    {signedIn ? <p>Number of M00Sik NFT's Minted: {totalSupply} / 3760</p> : <p>Number of M00Sik NFT's Minted: - / 3760</p>}
+                    {signedIn ? <p>Number of m00sik NFT's Minted: {totalSupply} / 3760</p> : <p>Number of m00sik NFT's Minted: - / 3760</p>}
                     <p>Input number to Mint:<br/><span>(0.027 ETH)</span></p>
                     <div className={signedIn ? "welcome__signIn-input" : "welcome__signIn-input-false"}>
                         <input 
@@ -284,7 +284,7 @@ export default function Welcome () {
                             name="" 
                         />
                     </div>
-                    {howManyTokens > 0 ? <button className={signedIn ? "welcome__button" : "welcome__buttonInactive"} onClick={() => mint()}>Mint {howManyTokens} M00Sik NFT's</button> : <button className={signedIn ? "welcome__button" : "welcome__buttonInactive"} onClick={() => mintOne()}>Mint {howManyTokens} M00Sik NFT's</button>}
+                    {howManyTokens > 0 ? <button className={signedIn ? "welcome__button" : "welcome__buttonInactive"} onClick={() => mint()}>Mint {howManyTokens} m00sik NFT's</button> : <button className={signedIn ? "welcome__button" : "welcome__buttonInactive"} onClick={() => mintOne()}>Mint {howManyTokens} m00sik NFT's</button>}
                 </div>
             </div>
             <Modal

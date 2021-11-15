@@ -1,5 +1,4 @@
-import React, { useEffect, useState } from 'react';
-import Sound from 'react-sound';
+import React from 'react';
 import "./Display.css";
 import example1 from '../images/example1.png'
 import example2 from '../images/example2.png'

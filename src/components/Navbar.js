@@ -22,7 +22,7 @@ export default class Navbar extends Component {
         <div className="nav-container">
           <div className="nav-logo">
             <h2>
-              M00Sik
+              m00sik
             </h2>
           </div>
          
