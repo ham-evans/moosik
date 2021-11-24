@@ -25,6 +25,7 @@
     text-align:center;
     background-color: #000;
     color: #fff;
+    border: 1px solid #fff;
 }
 
 .modal-content button { 

@@ -6,6 +6,7 @@ import Welcome from './components/Welcome'
 import Display from './components/Display'
 import Roadmap from './components/Roadmap'
 import About from './components/About'
+import Details from './components/Details'
 import Info from './components/Info'
 import Footer from './components/Footer'
 import { BrowserRouter as Router, Switch } from "react-router-dom";
@@ -22,6 +23,8 @@ class App extends Component {
           <Welcome />
           <Display />
           <About />
+          <Home />
+          <Details />
           <Home />
           <Roadmap />
           <Info />

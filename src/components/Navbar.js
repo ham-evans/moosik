@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { HashLink } from "react-router-hash-link";
 import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faDiscord, faTwitter, faYoutube } from '@fortawesome/free-brands-svg-icons'
+import { faDiscord, faTwitter, faYoutube, faMedium } from '@fortawesome/free-brands-svg-icons'
 import { faTimes, faBars } from '@fortawesome/free-solid-svg-icons'
 
 import "./Navbar.css";
@@ -67,8 +67,13 @@ export default class Navbar extends Component {
               </Link>
             </li>
             <li className="nav-item">
-              <Link className="nav-links" to={{ pathname: "https://twitter.com/M00Sik" }} target="_blank" >
+              <Link className="nav-links" to={{ pathname: "https://discord.gg/MMXzDskDS7" }} target="_blank" >
                 <FontAwesomeIcon icon={faDiscord} />
+              </Link>
+            </li>
+            <li className="nav-item">
+              <Link className="nav-links" to={{ pathname: "https://medium.com/@m00sik" }} target="_blank" >
+                <FontAwesomeIcon icon={faMedium} />
               </Link>
             </li>
           </ul>

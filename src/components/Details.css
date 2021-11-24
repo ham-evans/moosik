@@ -1,0 +1,40 @@
+.details__wrapper{    
+    padding-top: 100px;
+    padding-bottom: 100px;
+    background: #000;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    min-height: 100vh;
+    height: 100%;
+}
+
+.details h1 {
+    background-color: #fff;
+    background-size: 100%;
+    -webkit-background-clip: text;
+    -moz-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    -moz-text-fill-color: transparent;
+    font-size: 3rem;
+}
+
+.details p { 
+    color:  #fff;
+    font-size: 1.3rem;
+    max-width: 80%;
+    margin: 3rem auto;
+    text-align: center;
+}
+
+@media screen and (max-width: 960px) {
+    .details h1 {
+        font-size: 3rem;
+    }
+
+    .details p { 
+        font-size: 1.2rem;
+    }
+}
